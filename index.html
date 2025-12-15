@@ -3,48 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexDataTech</title>
+    <title>Nexdata LLC</title>
     <style>
-        body { font-family: Arial; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        header, footer { text-align: center; margin-bottom: 20px; }
-        header h1 { margin-bottom: 5px; }
-        nav a { margin: 0 10px; text-decoration: none; color: #0073e6; }
-        nav a:hover { text-decoration: underline; }
-        section { margin-bottom: 20px; }
+        /* 通用样式 */
+        body { margin:0; font-family: Arial, sans-serif; line-height: 1.6; color:#333; }
+        a { text-decoration: none; color: inherit; }
+
+        /* 导航栏 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1f2937;
+            color: white;
+        }
+        nav .logo { font-weight: bold; font-size: 24px; }
+        nav ul { display: flex; list-style: none; margin:0; padding:0; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; font-weight: 500; }
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1500x400') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .banner h1 { font-size: 48px; margin-bottom: 10px; }
+        .banner p { font-size: 20px; margin-bottom: 20px; }
+        .banner a { background-color: #3b82f6; padding: 12px 25px; border-radius: 5px; color:white; font-weight: bold; }
+
+        /* Sections */
+        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+        section h2 { text-align: center; margin-bottom: 40px; font-size: 32px; color: #1f2937; }
+
+        /* About & Services */
+        .about, .services, .team { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        .card {
+            flex: 1 1 250px;
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .card img { width: 80px; margin-bottom: 15px; }
+
+        /* Contact form */
+        .contact form { display: flex; flex-direction: column; max-width: 500px; margin: auto; }
+        .contact input, .contact textarea { padding:10px; margin-bottom: 15px; border-radius:5px; border:1px solid #ccc; font-size:16px; }
+        .contact button { padding:12px; border:none; background-color:#3b82f6; color:white; font-weight:bold; border-radius:5px; cursor:pointer; }
+
+        /* Footer */
+        footer { background-color: #1f2937; color: white; text-align:center; padding:20px; margin-top:40px; }
+
+        /* 响应式 */
+        @media(max-width:768px){
+            nav ul { flex-direction: column; gap: 10px; margin-top:10px; }
+            .banner h1 { font-size: 36px; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>NexDataTech</h1>
-        <p>Professional Data & Software Services</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>NexDataTech is a technology company providing data analysis, software development, and IT consulting services.</p>
-    </section>
-    <section id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>Data Analysis & Visualization</li>
-            <li>Custom Software Development</li>
-            <li>IT & Technology Consulting</li>
-            <li>Data Pipeline & Automation</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@nexdatatech.com">info@nexdatatech.com</a></p>
-        <p>Phone: +1 (123) 456-7890</p>
-        <p>Address: 123 Technology Ave, City, State, ZIP</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 NexDataTech. All rights reserved.</p>
-    </footer>
+
+<!-- 导航栏 -->
+<nav>
+    <div class="logo">Nexdata</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Banner -->
+<div class="banner" id="home">
+    <h1>Welcome to Nexdata LLC</h1>
+    <p>Your Partner in Advanced Data Science & Analytics Solutions</p>
+    <a href="#contact">Get in Touch</a>
+</div>
+
+<!-- About -->
+<section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="About Icon">
+            <h3>Our Mission</h3>
+            <p>Deliver cutting-edge data analytics solutions tailored to your business needs.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="About Icon">
+            <h3>Our Vision</h3>
+            <p>Become a leading data science company driving innovation and insights.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="Service Icon">
+            <h3>Data Analysis</h3>
+            <p>Comprehensive analysis to help businesses make data-driven decisions.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="Service Icon">
+            <h3>Machine Learning</h3>
+            <p>Implement predictive models and AI solutions for diverse industries.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="Service Icon">
+            <h3>Consulting</h3>
+            <p>Expert advice on data strategy, analytics tools, and business intelligence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Team -->
+<section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team">
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="Team Member">
+            <h3>John Doe</h3>
+            <p>CEO & Data Scientist</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="Team Member">
+            <h3>Jane Smith</h3>
+            <p>CTO & Machine Learning Expert</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/80" alt="Team Member">
+            <h3>You</h3>
+            <p>STEM OPT Trainee & Data Analyst</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+        <form action="mailto:contact@nexdata.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Nexdata LLC. All rights reserved.
+</footer>
+
 </body>
 </html>
-
