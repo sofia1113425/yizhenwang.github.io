@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexdata LLC | Data Science & Analytics Solutions</title>
-    <!-- Font Awesome icons -->
+    <title>Nexdata LLC | Data Analytics for STEM</title>
+    <meta name="description" content="Nexdata LLC provides data analytics and machine learning solutions for STEM applications. Founded in April 2025.">
+    
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --dark: #111827;
-            --light: #f9fafb;
-            --gray: #6b7280;
-            --light-gray: #e5e7eb;
+            --accent: #0ea5e9;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
             --white: #ffffff;
         }
         
@@ -28,583 +28,618 @@
         }
         
         body {
-            font-family: 'Inter', Arial, sans-serif;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: var(--dark);
             line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: var(--light);
         }
         
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 40px;
-            background-color: var(--dark);
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo-img {
-            height: 40px;
+            height: 45px;
             width: auto;
-            border-radius: 4px;
         }
         
-        .logo-text {
-            color: white;
+        .company-name {
             font-size: 24px;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            color: var(--dark);
+        }
+        
+        .company-name span {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
         }
         
         nav ul {
             list-style: none;
             display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav ul li {
-            margin-left: 32px;
+            gap: 35px;
         }
         
         nav ul li a {
-            color: white;
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s ease;
-            padding: 8px 0;
+            padding: 5px 0;
             position: relative;
         }
         
         nav ul li a:hover {
-            color: #60a5fa;
+            color: var(--primary);
         }
         
-        /* Banner */
-        .banner {
-            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.9)), 
-                        url('https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
+        nav ul li a.active {
+            color: var(--primary);
+        }
+        
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
             text-align: center;
-            padding: 140px 20px;
+            padding: 80px 20px;
+            margin: 30px 0 60px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
             position: relative;
         }
         
-        .banner h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        
-        .banner p {
-            font-size: 22px;
+        .hero p {
+            font-size: 20px;
             max-width: 700px;
-            margin: 0 auto 40px;
-            font-weight: 300;
-            color: #e5e7eb;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
         }
         
         .cta-button {
             display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 16px 36px;
+            background: var(--white);
+            color: var(--primary);
+            padding: 16px 40px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 17px;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
         .cta-button:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
         
-        /* Sections */
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 80px 20px;
+        /* Section Styles */
+        .section {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         
-        section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
             color: var(--dark);
-            font-weight: 700;
-        }
-        
-        .section-subtitle {
             text-align: center;
-            font-size: 18px;
-            color: var(--gray);
-            max-width: 800px;
-            margin: 0 auto 60px;
+            position: relative;
+            padding-bottom: 15px;
         }
         
-        /* Cards */
-        .cards {
-            display: flex;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
             margin-top: 40px;
         }
         
-        .card {
+        .service-card {
             background: var(--white);
-            padding: 40px 30px;
+            padding: 35px 30px;
             border-radius: 12px;
-            flex: 1 1 320px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--light-gray);
         }
         
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
         }
         
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 25px;
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 28px;
         }
         
-        .card h3 {
+        .service-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
             color: var(--dark);
         }
         
-        .card p {
+        .service-card p {
             color: var(--gray);
             line-height: 1.7;
         }
         
-        /* Team Section */
-        .team-section {
-            background-color: var(--light);
-            border-radius: 16px;
-            padding: 60px;
-            margin-top: 60px;
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
         
-        .team-cards {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .team-card {
-            text-align: center;
-            flex: 1;
-            max-width: 250px;
-        }
-        
-        .team-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 4px solid white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Contact */
-        .contact-container {
-            display: flex;
-            gap: 60px;
-            align-items: flex-start;
-            margin-top: 40px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
             color: var(--dark);
         }
         
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
+        .about-details {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
         }
         
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
+        .about-details p {
+            margin-bottom: 15px;
+            color: var(--gray);
         }
         
-        .info-item {
+        .detail-item {
             display: flex;
-            align-items: center;
-            margin-bottom: 24px;
+            align-items: flex-start;
+            margin-bottom: 20px;
         }
         
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #dbeafe;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 18px;
+        .detail-icon {
             color: var(--primary);
             font-size: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            min-width: 24px;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-card h3 i {
+            color: var(--primary);
+        }
+        
+        .contact-details p {
+            margin-bottom: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        .hours {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .hours p {
+            margin-bottom: 5px;
+            font-size: 14px;
         }
         
         /* Footer */
         footer {
+            margin-top: 80px;
+            padding: 60px 0 40px;
             background: var(--dark);
-            color: white;
-            padding: 60px 20px 30px;
+            color: var(--white);
+            text-align: center;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-logo {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 40px;
         }
         
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-section h3 {
-            font-size: 20px;
-            margin-bottom: 24px;
-            color: white;
+        .footer-logo img {
+            height: 40px;
+            width: auto;
         }
         
         .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
         }
         
         .footer-links a {
-            color: #d1d5db;
+            color: #cbd5e1;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--white);
         }
         
         .copyright {
-            text-align: center;
+            margin-top: 40px;
             padding-top: 30px;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
-            font-size: 15px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
         }
         
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            nav {
-                padding: 16px 20px;
+            .nav-container {
                 flex-direction: column;
                 gap: 20px;
+                text-align: center;
             }
             
             nav ul {
-                width: 100%;
+                gap: 20px;
+                flex-wrap: wrap;
                 justify-content: center;
             }
             
-            nav ul li {
-                margin: 0 12px;
+            .hero {
+                padding: 60px 20px;
             }
             
-            .banner {
-                padding: 100px 20px;
+            .hero h1 {
+                font-size: 32px;
             }
             
-            .banner h1 {
-                font-size: 36px;
-            }
-            
-            .banner p {
+            .hero p {
                 font-size: 18px;
             }
             
-            .contact-container {
-                flex-direction: column;
+            .section {
+                padding: 30px 20px;
             }
             
-            .team-cards {
-                flex-direction: column;
-                align-items: center;
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <!-- Logo image - replace with your actual logo -->
-            <img src="https://cdn.pixabay.com/photo/2017/08/05/11/24/logo-2582757_640.png" alt="Nexdata Logo" class="logo-img">
-            <div class="logo-text">Nexdata LLC</div>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Nexdata LLC Logo" class="logo">
+                <div class="company-name">
+                    Nexdata LLC
+                    <span>Data Analytics for STEM</span>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    </header>
 
-    <!-- Banner -->
-    <div class="banner" id="home">
-        <h1>Advanced Data Science & AI Analytics Solutions</h1>
-        <p>We transform complex data into actionable insights with cutting-edge machine learning and statistical modeling techniques.</p>
-        <a href="#contact" class="cta-button">Get Your Free Consultation</a>
-    </div>
-
-    <!-- About Us -->
-    <section id="about">
-        <h2>About Nexdata</h2>
-        <p class="section-subtitle">We are a team of expert data scientists, statisticians, and AI specialists dedicated to helping businesses unlock the full potential of their data.</p>
-        
-        <div class="cards">
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2018/05/18/15/30/web-design-3411373_640.jpg" alt="Data Analysis Dashboard" class="card-img">
-                <h3>Data-Driven Decisions</h3>
-                <p>We apply advanced statistical modeling and machine learning to transform raw data into strategic insights that drive business growth and operational efficiency.</p>
-            </div>
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2018/05/04/07/17/technology-3373415_640.jpg" alt="Custom Solutions Development" class="card-img">
-                <h3>Custom Solutions</h3>
-                <p>Every business is unique. We develop tailored analytics solutions that align with your specific goals, industry challenges, and data infrastructure.</p>
-            </div>
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2018/09/27/09/22/artificial-intelligence-3706562_640.jpg" alt="Rapid Implementation Process" class="card-img">
-                <h3>Rapid Implementation</h3>
-                <p>Our agile methodology ensures quick deployment of analytics solutions, with continuous optimization based on real-world performance and feedback.</p>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Data Analytics Solutions for STEM Innovation</h1>
+        <p>Providing specialized data science and machine learning services for science, technology, engineering, and mathematics applications.</p>
+        <a href="#contact" class="cta-button">Get Started Today</a>
     </section>
 
-    <!-- Services -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <p class="section-subtitle">Comprehensive data science and analytics services tailored to your business needs.</p>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About Nexdata LLC</h2>
+        <p class="intro-text">
+            Founded in April 2025, Nexdata LLC is a startup specializing in data analytics and machine learning solutions 
+            tailored for STEM (Science, Technology, Engineering, and Mathematics) applications. We combine technical 
+            expertise with practical problem-solving to help organizations make data-driven decisions.
+        </p>
         
-        <div class="cards">
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-development-6521720_640.jpg" alt="Data Analysis Service" class="card-img">
-                <h3>Data Analysis & Visualization</h3>
-                <p>Deep exploratory analysis with interactive dashboards and reports that make complex data understandable and actionable.</p>
-            </div>
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2019/07/14/16/27/pen-4337524_640.jpg" alt="Predictive Modeling Service" class="card-img">
-                <h3>Predictive Modeling & AI</h3>
-                <p>Build and deploy machine learning models for forecasting, classification, and optimization using the latest AI techniques.</p>
-            </div>
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2017/05/13/17/42/data-2309124_640.jpg" alt="Business Intelligence Service" class="card-img">
-                <h3>Business Intelligence</h3>
-                <p>Develop comprehensive BI systems that provide real-time insights and KPIs to stakeholders across your organization.</p>
-            </div>
-        </div>
-        
-        <div class="cards">
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2020/06/13/17/51/magnifying-glass-5295478_640.jpg" alt="Data Quality Audit Service" class="card-img">
-                <h3>Data Quality Audit</h3>
-                <p>Comprehensive assessment of your data infrastructure, quality, and governance to identify improvement opportunities.</p>
-            </div>
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_640.jpg" alt="Custom Solutions Service" class="card-img">
-                <h3>Custom Solutions</h3>
-                <p>Tailored analytics applications and tools designed specifically for your business processes and industry requirements.</p>
-            </div>
-            <div class="card">
-                <img src="https://cdn.pixabay.com/photo/2018/09/27/09/22/artificial-intelligence-3706562_640.jpg" alt="Training & Support Service" class="card-img">
-                <h3>Training & Support</h3>
-                <p>Empower your team with data literacy training and ongoing support to ensure long-term success with analytics initiatives.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team -->
-    <section id="team" class="team-section">
-        <h2>Our Expert Team</h2>
-        <p class="section-subtitle">Meet the data science professionals behind our success.</p>
-        
-        <div class="team-cards">
-            <div class="team-card">
-                <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Alex Chen - Chief Data Scientist" class="team-img">
-                <h3>Alex Chen</h3>
-                <p>Chief Data Scientist<br>PhD in Statistics, 12+ years experience</p>
-            </div>
-            <div class="team-card">
-                <img src="https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Maria Rodriguez - ML Engineering Lead" class="team-img">
-                <h3>Maria Rodriguez</h3>
-                <p>ML Engineering Lead<br>MSc in Computer Science, AI specialist</p>
-            </div>
-            <div class="team-card">
-                <img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=640" alt="David Kim - Data Visualization Expert" class="team-img">
-                <h3>David Kim</h3>
-                <p>Data Visualization Expert<br>Former BI consultant, Tableau certified</p>
-            </div>
-            <div class="team-card">
-                <img src="https://images.pexels.com/photos/3768918/pexels-photo-3768918.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Sarah Johnson - Solutions Architect" class="team-img">
-                <h3>Sarah Johnson</h3>
-                <p>Solutions Architect<br>Cloud infrastructure & deployment expert</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p class="section-subtitle">Ready to transform your data into a competitive advantage? Get in touch with our team.</p>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>contact@nexdata.com</p>
-                        <p>support@nexdata.com</p>
-                    </div>
-                </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Focus</h3>
+                <p>We concentrate exclusively on STEM applications, ensuring our solutions are scientifically sound and technically robust. Our approach combines statistical rigor with practical implementation.</p>
                 
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-phone"></i>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div>
+                            <p><strong>Founded:</strong> April 2025</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>+1 (555) 123-4567</p>
-                        <p>Mon-Fri, 9am-6pm EST</p>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <p><strong>Focus:</strong> STEM applications exclusively</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <h3>Office</h3>
-                        <p>Data Science Center</p>
-                        <p>123 Analytics Drive, Suite 450</p>
-                        <p>San Francisco, CA 94107</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <h3>Response Time</h3>
-                        <p>We typically respond within 24 hours</p>
-                        <p>Urgent inquiries: 2-4 hours</p>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p><strong>Approach:</strong> Data-driven, scientifically validated solutions</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" required>
+            <div class="about-text">
+                <h3>Why Choose Us</h3>
+                <p>As a new company, we bring fresh perspectives and modern approaches to data analytics. We're agile, responsive, and committed to delivering measurable results for our clients.</p>
+                
+                <div class="about-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <p><strong>Agility:</strong> Quick adaptation to client needs</p>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" required>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div>
+                            <p><strong>Collaboration:</strong> Close partnership with clients</p>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <p><strong>Expertise:</strong> Focused on STEM applications</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="intro-text">
+            We offer specialized data analytics services designed specifically for STEM organizations and researchers.
+        </p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Statistical Analysis</h3>
+                <p>Advanced statistical methods for experimental data, hypothesis testing, and research validation in scientific studies.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Custom ML models for pattern recognition, predictive analytics, and optimization in technical applications.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Data Processing</h3>
+                <p>Cleaning, organizing, and preparing large-scale scientific and technical datasets for analysis.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Experimental Support</h3>
+                <p>Statistical guidance for experimental design, sample planning, and research methodology optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="intro-text">
+            Get in touch to discuss your data analytics needs. We're here to help with your STEM projects.
+        </p>
+        
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3><i class="fas fa-phone"></i> Phone</h3>
+                <div class="contact-details">
+                    <p><strong>Primary Contact:</strong></p>
+                    <p>217-721-6640</p>
                     
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service">
-                            <option value="">Select a service</option>
-                            <option value="analysis">Data Analysis</option>
-                            <option value="modeling">Predictive Modeling</option>
-                            <option value="bi">Business Intelligence</option>
-                            <option value="audit">Data Quality Audit</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <div class="hours">
+                        <p><strong>Business Hours:</strong></p>
+                        <p>Monday - Friday</p>
+                        <p>9:00 AM - 6:00 PM EST</p>
                     </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Office Address</h3>
+                <div class="contact-details">
+                    <p>7450 GA Highway 21, Unit 125</p>
+                    <p>Port Wentworth, GA 31407</p>
+                    <p>United States</p>
                     
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" required></textarea>
+                    <div class="hours">
+                        <p><strong>Response Time:</strong></p>
+                        <p>We typically respond within 24 hours during business days.</p>
                     </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <h3><i class="fas fa-clock"></i> Business Information</h3>
+                <div class="contact-details">
+                    <p><strong>Company Status:</strong> Startup (Founded April 2025)</p>
+                    <p><strong>Focus Area:</strong> STEM Applications</p>
+                    <p><strong>Service Model:</strong> Project-based consulting</p>
                     
-                    <button type="submit" class="cta-button" style="width:100%;">Send Message</button>
-                </form>
+                    <div class="hours">
+                        <p><strong>Note:</strong> As a new company, we're currently building our portfolio and welcome pilot projects.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -612,116 +647,88 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Nexdata LLC</h3>
-                <p>Applied Data Science & Analytics Solutions for forward-thinking businesses.</p>
-                <p>Transforming data into actionable intelligence since 2018.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#services">Data Analysis</a></li>
-                    <li><a href="#services">Predictive Modeling</a></li>
-                    <li><a href="#services">Business Intelligence</a></li>
-                    <li><a href="#services">Data Quality Audit</a></li>
-                    <li><a href="#services">Training & Support</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div style="display: flex; gap: 15px; margin-top: 20px;">
-                    <a href="#" style="color: white; font-size: 22px;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="color: white; font-size: 22px;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color: white; font-size: 22px;"><i class="fab fa-github"></i></a>
-                    <a href="#" style="color: white; font-size: 22px;"><i class="fab fa-medium"></i></a>
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Nexdata LLC Logo">
+                <div class="company-name" style="color: white;">
+                    Nexdata LLC
+                    <span style="color: #cbd5e1;">Data Analytics for STEM</span>
                 </div>
-                <p style="margin-top: 20px;">Subscribe to our newsletter for data insights</p>
             </div>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2025 Nexdata LLC. All rights reserved. | <a href="#" style="color: #9ca3af;">Privacy Policy</a> | <a href="#" style="color: #9ca3af;">Terms of Service</a>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Nexdata LLC. All rights reserved.</p>
+                <p>Founded April 2025 | Port Wentworth, Georgia</p>
+                <p style="margin-top: 10px; font-size: 13px; color: #94a3b8;">
+                    This website represents our actual business information. We are a legitimate startup company.
+                </p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const company = document.getElementById('company').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
+        // Simple form simulation (for future enhancement)
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            if(this.getAttribute('href') === '#contact') {
+                e.preventDefault();
+                document.getElementById('contact').scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
-            
-            alert('Thank you, ' + name + '! Your message has been sent. We will get back to you within 24 hours.');
-            
-            document.getElementById('contactForm').reset();
         });
         
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#home') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+        // Update active navigation link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
                 }
             });
         });
         
-        // Add loading animation for images
+        // Logo error handling
         window.addEventListener('load', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s ease';
-                
-                if (img.complete) {
-                    img.style.opacity = '1';
-                } else {
-                    img.addEventListener('load', function() {
-                        this.style.opacity = '1';
-                    });
-                    
-                    // Handle image loading errors
-                    img.addEventListener('error', function() {
-                        console.log('Failed to load image: ' + this.src);
-                        this.style.opacity = '1';
-                        this.style.backgroundColor = '#f3f4f6';
-                    });
-                }
+            const logo = document.querySelector('.logo');
+            logo.addEventListener('error', function() {
+                console.log('Logo image not found at images/logo.png');
+                // Create a simple text logo as fallback
+                this.style.display = 'none';
+                const parent = this.parentElement;
+                const textLogo = document.createElement('div');
+                textLogo.innerHTML = 'ND';
+                textLogo.style.cssText = `
+                    width: 45px;
+                    height: 45px;
+                    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+                    color: white;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 20px;
+                `;
+                parent.insertBefore(textLogo, this.nextSibling);
             });
         });
     </script>
