@@ -4,162 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexdata LLC</title>
-    <style>
-        /* 通用样式 */
-        body { margin:0; font-family: Arial, sans-serif; line-height: 1.6; color:#333; }
-        a { text-decoration: none; color: inherit; }
 
-        /* 导航栏 */
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
             background-color: #1f2937;
-            color: white;
         }
-        nav .logo { font-weight: bold; font-size: 24px; }
-        nav ul { display: flex; list-style: none; margin:0; padding:0; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: white; font-weight: 500; }
 
-        /* Banner */
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+
         .banner {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1500x400') center/cover no-repeat;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+            );
             color: white;
             text-align: center;
             padding: 100px 20px;
         }
-        .banner h1 { font-size: 48px; margin-bottom: 10px; }
-        .banner p { font-size: 20px; margin-bottom: 20px; }
-        .banner a { background-color: #3b82f6; padding: 12px 25px; border-radius: 5px; color:white; font-weight: bold; }
 
-        /* Sections */
-        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-        section h2 { text-align: center; margin-bottom: 40px; font-size: 32px; color: #1f2937; }
+        .banner h1 {
+            font-size: 46px;
+            margin-bottom: 10px;
+        }
 
-        /* About & Services */
-        .about, .services, .team { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        .banner p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1f2937;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
         .card {
-            flex: 1 1 250px;
+            flex: 1 1 260px;
             background-color: #f3f4f6;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             text-align: center;
         }
-        .card img { width: 80px; margin-bottom: 15px; }
 
-        /* Contact form */
-        .contact form { display: flex; flex-direction: column; max-width: 500px; margin: auto; }
-        .contact input, .contact textarea { padding:10px; margin-bottom: 15px; border-radius:5px; border:1px solid #ccc; font-size:16px; }
-        .contact button { padding:12px; border:none; background-color:#3b82f6; color:white; font-weight:bold; border-radius:5px; cursor:pointer; }
+        .image-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: #e5e7eb;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
 
-        /* Footer */
-        footer { background-color: #1f2937; color: white; text-align:center; padding:20px; margin-top:40px; }
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
 
-        /* 响应式 */
-        @media(max-width:768px){
-            nav ul { flex-direction: column; gap: 10px; margin-top:10px; }
-            .banner h1 { font-size: 36px; }
+        .contact input,
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact button {
+            padding: 12px;
+            border: none;
+            background-color: #3b82f6;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
+
 <body>
 
-<!-- 导航栏 -->
 <nav>
-    <div class="logo">Nexdata</div>
+    <div class="logo">
+        <img src="images/logo.png" alt="Nexdata Logo" style="height:40px;">
+    </div>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- Banner -->
 <div class="banner" id="home">
-    <h1>Welcome to Nexdata LLC</h1>
-    <p>Your Partner in Advanced Data Science & Analytics Solutions</p>
-    <a href="#contact">Get in Touch</a>
+    <h1>Nexdata LLC</h1>
+    <p>Data Science & Analytics Solutions for Practical Business Applications</p>
 </div>
 
-<!-- About -->
 <section id="about">
     <h2>About Us</h2>
-    <div class="about">
+    <div class="cards">
         <div class="card">
-            <img src="https://via.placeholder.com/80" alt="About Icon">
-            <h3>Our Mission</h3>
-            <p>Deliver cutting-edge data analytics solutions tailored to your business needs.</p>
+            <div class="image-placeholder"></div>
+            <h3>Company Overview</h3>
+            <p>
+                Nexdata LLC is a data-focused company dedicated to applying data science,
+                statistical analysis, and machine learning techniques to solve
+                real-world business problems. The company emphasizes structured,
+                supervised, and skill-based analytical work aligned with modern
+                data-driven workflows.
+            </p>
         </div>
+
         <div class="card">
-            <img src="https://via.placeholder.com/80" alt="About Icon">
-            <h3>Our Vision</h3>
-            <p>Become a leading data science company driving innovation and insights.</p>
+            <div class="image-placeholder"></div>
+            <h3>Training-Oriented Approach</h3>
+            <p>
+                Nexdata provides a structured training environment where data-related
+                tasks are performed under guidance and evaluation. The work focuses
+                on developing technical competencies, analytical thinking, and
+                practical experience in data science methodologies.
+            </p>
         </div>
     </div>
 </section>
 
-<!-- Services -->
 <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
+    <h2>Core Technical Activities</h2>
+    <div class="cards">
         <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Service Icon">
-            <h3>Data Analysis</h3>
-            <p>Comprehensive analysis to help businesses make data-driven decisions.</p>
+            <div class="image-placeholder"></div>
+            <h3>Data Preparation & Analysis</h3>
+            <p>
+                Collecting, cleaning, transforming, and analyzing datasets to identify
+                patterns, trends, and actionable insights using statistical techniques
+                and analytical tools.
+            </p>
         </div>
+
         <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Service Icon">
-            <h3>Machine Learning</h3>
-            <p>Implement predictive models and AI solutions for diverse industries.</p>
+            <div class="image-placeholder"></div>
+            <h3>Modeling & Machine Learning</h3>
+            <p>
+                Developing and evaluating predictive models under defined objectives,
+                including feature engineering, model selection, and performance
+                evaluation.
+            </p>
         </div>
+
         <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Service Icon">
-            <h3>Consulting</h3>
-            <p>Expert advice on data strategy, analytics tools, and business intelligence.</p>
+            <div class="image-placeholder"></div>
+            <h3>Reporting & Documentation</h3>
+            <p>
+                Creating technical documentation, visualizations, and analytical reports
+                to communicate findings, support decision-making, and demonstrate
+                learning progress.
+            </p>
         </div>
     </div>
 </section>
 
-<!-- Team -->
-<section id="team">
-    <h2>Meet Our Team</h2>
-    <div class="team">
-        <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Team Member">
-            <h3>John Doe</h3>
-            <p>CEO & Data Scientist</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Team Member">
-            <h3>Jane Smith</h3>
-            <p>CTO & Machine Learning Expert</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Team Member">
-            <h3>You</h3>
-            <p>STEM OPT Trainee & Data Analyst</p>
-        </div>
-    </div>
-</section>
-
-<!-- Contact -->
 <section id="contact">
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
     <div class="contact">
-        <form action="mailto:contact@nexdata.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea rows="5" placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     &copy; 2025 Nexdata LLC. All rights reserved.
 </footer>
